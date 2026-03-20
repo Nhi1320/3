@@ -1,6 +1,8 @@
 #include <iostream>
+
 using namespace std;
 
+// Tìm ước chung lớn nhất
 int ucln(int t,int m)
 {
     while(m!=0)
@@ -11,19 +13,19 @@ int ucln(int t,int m)
     }
     return t;
 }
-
+// Tìm bội chung nhỏ nhất
 int bcnn(int t, int m)
 {
     return t/ucln(t,m)*m;
 }
-
+// Quy đồng mẫu số
 void quydong(int t1, int t2, int m1, int m2, int &tu1, int &tu2, int &mau)
 {
     mau=bcnn(m1,m2);
     tu1=t1*(mau/m1);
     tu2=t2*(mau/m2);
 }
-
+// Rút gọn phân số
 void Ketqua(int t, int m)
 {
     int g=ucln(abs(t), abs(m));
@@ -38,7 +40,7 @@ int main()
 
     cout<< "Nhap phan so thu hai: "<<endl;
     cin>>t2>>m2;
-
+// Điều kiện của 1 phân số
     if(m1!=0 && m2!=0)
     {
         int tu1,tu2,mau;
@@ -51,6 +53,7 @@ int main()
         if(t2==0)
             cout<< "Khong the chia cho 0."<<endl;
         else cout<< "Chia: ";Ketqua(t1*m2,m1*t2);cout<<endl;
+
     }
     else cout<< "Khong dung dinh dang.Vui long nhap lai!";
     return 0;
